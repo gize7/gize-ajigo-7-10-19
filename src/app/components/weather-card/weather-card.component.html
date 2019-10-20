@@ -1,0 +1,111 @@
+<div  class="container-fluid">
+    <div *ngIf="loaded" class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+      </div>
+<div class="formwarrp">
+  <form *ngIf="!loaded" [formGroup]="searchForm">
+    <input
+
+      type="text"
+      formControlName="search"
+      placeholder="Search By City Name"
+      (input)="onInputChange($event)"
+    />
+
+    <ul  class="ulsugesst">
+      <li
+        *ngFor="let suggestion of suggestions"
+        [value]="suggestion?.LocalizedName"
+        (mousedown)="getWeather(suggestion?.Key, suggestion?.LocalizedName)">
+        {{ suggestion?.LocalizedName }}
+    </li>
+    </ul>
+
+  </form>
+</div>
+
+
+<div *ngIf="!loaded" class="weather-contine">
+  <div class="container">
+    <div class="widget">
+      <div class="details" *ngIf="!metric">
+        <div class="temperature">{{ City?.city }}</div>
+        <div class="temperature">{{ City?.weatherText }}</div>
+        <img
+          class="pictoCloudBig"
+          src="https://vortex.accuweather.com/adc2010/images/slate/icons/{{
+            City?.WeatherIcon
+          }}.svg"
+        />
+        <div class="temperature">
+          {{ City?.Temperature?.Imperial?.Value }}
+          {{ City?.Temperature?.Imperial?.Unit }}
+        </div>
+      </div>
+      <div class="details" *ngIf="metric">
+        <div class="temperature">{{ City?.city }}</div>
+        <div class="temperature">{{ City?.weatherText }}</div>
+        <img
+          class="pictoCloudBig"
+          src="https://vortex.accuweather.com/adc2010/images/slate/icons/{{
+            City?.WeatherIcon
+          }}.svg"
+        />
+        <div class="temperature">
+          {{ City?.Temperature?.Metric?.Value }}
+          {{ City?.Temperature?.Metric?.Unit }}
+        </div>
+      </div>
+      <div class="like">
+          <i
+          style='font-size:30px'
+          class="fa fa-heart-o"
+          aria-hidden="true"
+
+          (click)="addToFavorite()" *ngIf="!exist"
+        ></i>
+        <i
+        style='font-size:30px'
+        (click)="removeFromFavorite()" *ngIf="exist"
+        class="fa fa-heart"
+        aria-hidden="true"
+        [ngStyle]="exist && { color: '#2266ff;' }"
+      ></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!loaded" class="weather__wrapper">
+  <div class="weather__cont" *ngFor="let day of fiveDayWeather">
+    <h4 >{{ day.Date }}</h4>
+    <img
+      class="weather-icon"
+      src="https://vortex.accuweather.com/adc2010/images/slate/icons/{{
+        day?.Day.Icon
+      }}.svg"
+    />
+    <br />
+    <h4>
+      {{ day?.Day?.IconPhrase }}<br />
+      <br/>
+      {{ day?.Temperature?.Minimum?.Value }}
+      /
+      {{ day?.Temperature?.Maximum?.Value }}
+      {{ day?.Temperature?.Maximum?.Unit }}<br />
+    </h4>
+  </div>
+</div>
+
+</div>

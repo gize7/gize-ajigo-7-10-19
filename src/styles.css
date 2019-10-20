@@ -1,0 +1,233 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(
+    circle at 33% 100%,
+    #fed373 2%,
+    #f15245 10%,
+    #d92e7f 62%,
+    #9b36b7 85%,
+    #515ecf
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.weather-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.weather-today {
+  color: white;
+  padding: 10px 30px;
+  border-radius: 15px;
+  /* font-family: "Mali", cursive; */
+  margin: 10px 20px;
+  box-shadow: 0px 10px 84px -31px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s linear;
+}
+
+.weather-contine {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1fr));
+  justify-items: center;
+  align-items: center;
+}
+
+.weather-today:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -o-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+}
+
+.weather__wrapper {
+  padding: 0 2rem;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.upHeading {
+  color: white;
+  font-weight: 500;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.weather__cont {
+  color: white;
+  width: 100%;
+  height: 290px;
+  text-align: center;
+  font-size: 5em;
+  border-radius: 7px;
+  padding-top: 20px;
+  transition: all 0.3s linear;
+  box-shadow: 0px 10px 84px -31px rgba(0, 0, 0, 0.7);
+}
+.weather__cont:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -o-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+}
+.widget {
+  width: 500px;
+  height: 360px;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  position: relative;
+  overflow: hidden;
+}
+
+.pictoCloudBig {
+  position: absolute;
+  height: 200.4px;
+  width: 200.4px;
+  top: 82px;
+  right: 15px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-left: 60px;
+}
+.temperature {
+  color: white;
+  font-weight: 500;
+  font-size: 2em;
+}
+.summary {
+  color: white;
+  font-size: 1.3em;
+  font-weight: 300;
+  width: 260px;
+  margin-top: 7px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid white;
+  margin-left: 8px;
+}
+.summaryText {
+  margin: 0;
+  margin-left: 56px;
+}
+.precipitation,
+.wind {
+  color: white;
+  font-size: 1.3em;
+  font-weight: 300;
+  margin-left: 8px;
+}
+.precipitation {
+  margin-top: 16px;
+}
+.wind {
+  margin-top: 4px;
+}
+
+.wi-day-fog,
+.wi-day-sunny,
+.wi-fog,
+.wi-snow,
+.wi-storm-showers,
+.wi-sleet,
+.wi-thunderstorm {
+  color: white;
+}
+
+.copy-right {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 4em;
+}
+.copy-right a:link {
+  text-decoration: none;
+}
+input {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  outline: 0;
+  padding: 0px 12px 10px 12px;
+}
+form .btn {
+  background: transparent;
+  border-color: transparent;
+  color: white;
+  margin-bottom: 2px;
+}
+form .btn:hover {
+  background: gray;
+  color: white;
+}
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+input:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 515px) {
+  .widget {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+ position: relative;
+    overflow: hidden;
+  }
+  .pictoCloudBig {
+    display: none;
+  }
+  .summary {
+    display: none;
+  }
+
+  form {
+    text-align: center;
+  }
+  form .btn {
+    margin: 10px;
+  }
+}
